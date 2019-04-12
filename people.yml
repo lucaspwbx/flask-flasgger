@@ -1,0 +1,19 @@
+Example endpoint returning people
+---
+definitions:
+  Person:
+    type: object
+    properties:
+      name:
+        type: string
+      age:
+        type: integer
+  People:
+    type: array
+    items:
+      $ref: '#/definitions/Person'
+responses:
+  200:
+    description: "list of people"
+    schema:
+      $ref: '#/definitions/People'
